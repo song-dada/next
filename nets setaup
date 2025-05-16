@@ -1,0 +1,37 @@
+npx create-next-app@latest -nextProject --typescript
+install sass mysql2 bcrypt axios jsonwebtoken
+
+bcrypt -> 비밀번호 암호와 서비스 컴페어(비교)해서 확인
+	npm i -save-dev @types/bcrypt -> 타입에서 지원을 안함으로 덮어 씌워줘야함.
+
+JWT Json Web Token
+-> 브라우저가 로컬스토리지에 토큰(신분증) 정보를 기억, 서버가 그걸 확인 후 요청에 대해 응답을 함.
+	npm i -save-dev @types/jsonwebtoken
+
+쿠키는 자동으로 웹 브라우저 안에 웹 브라우저 정보를 가지고 있는데 정보를 
+웹브라우저의 쿠키라는 공간이 있고 그 안에 웹브라우저의 모든 정보를 가지고 있다. 쿠키안에 jwt를 넣으면 알아서 정보를 주고 받는다.
+쿠키는 이미 있지만 jwt의 정보를 밀어 넣기 위해 사용함.
+
+
+npx create-next-app@latest -nextProject --typescript
+npm install sass
+npm install mysql2
+npm install bcrypt << 암호화 시키는 모듈
+npm install -save-dev @types/bcrypt
+npm install axios
+npm install jsonwebtoken
+npm install -save-dev @types/jsonwebtoken
+npm install cookie
+npm install -save-dev @types/cookie
+
+gcloud sql connect INSTANCE [--database=DATABASE, -d DATABASE] [--user=USER, -u USER] [GCLOUD_WIDE_FLAG …]
+use root
+CREATE TABLE users (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	email VARCHAR(255) NOT NULL UNIQUE,
+	password VARCHAR(255) NOT NULL,
+	name VARCHAR(100) NOT NULL
+);
+
+INSERT INTO users (email, password, name) 
+VALUES ('example@example.com', 'password123', 'John Doe');
